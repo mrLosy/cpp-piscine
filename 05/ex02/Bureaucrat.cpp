@@ -29,7 +29,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat& op){
 string Bureaucrat::getName(){
 	return _name;
 }
-int Bureaucrat::getGrade(){
+int Bureaucrat::getGrade() const{
 	return _grade;
 }
 

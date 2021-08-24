@@ -1,5 +1,7 @@
 #include "Form.hpp"
 
+Form::Form(void) : _name("UnknownName"), _gradeRequiredToSign(150), _gradeRequiredToExecute(150), _beSigned(false){}
+
 Form::Form(string const name, int gradeRTS, int gradeRTE) :
 	_name(name),
 	_gradeRequiredToSign(gradeRTS), 
@@ -48,7 +50,7 @@ int Form::getGradeRequiredToExecute() const{
 	return _gradeRequiredToExecute;
 }
 
-bool Form::getIsSigned(){
+bool Form::getIsSigned() const{
 	return _beSigned;
 }
 
@@ -57,6 +59,10 @@ const char * Form::GradeTooHighException::what() const throw(){
 }
 const char * Form::GradeTooLowException::what() const throw(){
 	return "Grade too low!";
+}
+
+const char * Form::IsNotSigned::what() const throw(){
+	return "The form is not signed!";
 }
 
 std::ostream& operator<<(std::ostream &out, Form& op){

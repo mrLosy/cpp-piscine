@@ -25,7 +25,7 @@ public:
 		Bureaucrat &operator=(Bureaucrat& op);
 
 		string getName();
-		int getGrade();
+		int getGrade() const;
 
 		void incrementGrade();
 		void decrementGrade();

@@ -1,6 +1,6 @@
 NAME		= form
 
-SRCS		= main.cpp Bureaucrat.cpp Form.cpp
+SRCS		= $(shell find . -name "*.cpp")
 
 OBJS		= $(SRCS:.cpp=.o)
 

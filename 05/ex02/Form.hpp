@@ -2,6 +2,7 @@
 # define FORM_HPP
 
 # include "Bureaucrat.hpp"
+# include <fstream>
 
 using std::string;
 using std::cout;
@@ -18,23 +19,29 @@ private:
 		bool _beSigned;
 
 public:
+		Form(void);
 		Form(string const name, int gradeRTS, int gradeRTE);
 		Form(const Form& copy);
-		~Form();
+		virtual ~Form();
 
 		Form &operator=(const Form& op);
 
 		string getName() const;
 		int getGradeRequiredToSign() const;
 		int getGradeRequiredToExecute() const;
-		bool getIsSigned();
+		bool getIsSigned() const;
 
 		void beSigned(Bureaucrat & op);
+
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighException : public std::exception{
 			const char * what() const throw();
 		};
 		class GradeTooLowException : public std::exception{
+			const char * what() const throw();
+		};
+		class IsNotSigned : public std::exception{
 			const char * what() const throw();
 		};
 };
