@@ -29,7 +29,7 @@ $(NAME):	$(OBJS)
 
 clean:
 		@echo "\033[0;31m[Deleting *.0 files...]"
-		rm ./srcs/*.d
+		# rm ./srcs/*.d
 		$(RM) $(OBJS)
 
 fclean:	clean
