@@ -10,7 +10,7 @@ RM			= rm -f
 
 CXXFLAGS	= -Wall -Wextra -Werror -I. -Wshadow -Wno-shadow -std=c++98 -g3
 
-INCLUDES	= $(shell find ./includes -name "*.hpp")
+# INCLUDES	= $(shell find ./includes -name "*.hpp")
 
 .PHONY:		all clean fclean re test
 

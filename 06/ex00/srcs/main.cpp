@@ -40,6 +40,7 @@ void	toChar(string _str){
 			return ;
 		}
 		cout << static_cast<char>(i) << endl;
+		return ;
 	}
 	if (_str.length() > 1){
 		cout << "impossible" << endl;

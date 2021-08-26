@@ -1,4 +1,4 @@
-NAME		= Generate
+NAME		= Serialization
 
 SRCS		= $(shell find . -name "*.cpp")
 
@@ -23,7 +23,7 @@ $(BIN_DIR)%.o: $(SRCS_DIR)%.cpp $(INCLUDES)
 -include $(OBJSRCS:.o=.d)
 
 $(NAME):	$(OBJS)
-			@echo "\033[0;33m[ex02 compilation...]"
+			@echo "\033[0;33m[ex01 compilation...]"
 			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 			@echo "\033[0;32m[Done!]"
 
