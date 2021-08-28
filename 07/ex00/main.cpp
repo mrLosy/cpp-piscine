@@ -10,8 +10,8 @@ int main(void){
 	cout << "min( a, b ) = " << ::min( a, b ) << endl;
 	cout << "max( a, b ) = " << ::max( a, b ) << endl;
 
-	std::string c = "example";
-	std::string d = "example2";
+	std::string c = "chaine1";
+	std::string d = "chaine2";
 
 	cout << endl;
 
