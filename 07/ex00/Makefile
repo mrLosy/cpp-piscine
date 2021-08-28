@@ -1,6 +1,6 @@
-NAME		= form
+NAME		= whatever
 
-SRCS		= $(shell find ./srcs -name "*.cpp")
+SRCS		= $(shell find . -name "*.cpp")
 
 OBJS		= $(addprefix $(BIN_DIR), $(SRCS:.cpp=.o))
 
@@ -10,7 +10,7 @@ RM			= rm -f
 
 CXXFLAGS	= -Wall -Wextra -Werror -I. -Wshadow -Wno-shadow -std=c++98 -g3
 
-INCLUDES	= $(shell find ./includes -name "*.hpp")
+INCLUDES	= $(shell find . -name "*.hpp")
 
 .PHONY:		all clean fclean re test
 
@@ -23,18 +23,17 @@ $(BIN_DIR)%.o: $(SRCS_DIR)%.cpp $(INCLUDES)
 -include $(OBJSRCS:.o=.d)
 
 $(NAME):	$(OBJS)
-			@echo "\033[0;33m[ex03 compilation...]"
+			@echo "\033[0;33m[ex00 compilation...]"
 			$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 			@echo "\033[0;32m[Done!]"
 
 clean:
 		@echo "\033[0;31m[Deleting *.0 files...]"
-		rm ./srcs/*.d
+		rm ./*.d
 		$(RM) $(OBJS)
 
 fclean:	clean
 		@echo "\033[0;31m[Deleting all files...]"
-		# rm *shrubbery
 		$(RM) $(NAME)
 
 re:		fclean all
